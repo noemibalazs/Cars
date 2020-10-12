@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_cars"
+        android:icon="@drawable/cars_list"
+        android:title="@string/app_name" />
+
+    <item
+        android:id="@+id/navigation_map"
+        android:icon="@drawable/location"
+        android:title="@string/txt_maps" />
+
+    <item
+        android:id="@+id/navigation_sort_by_plate"
+        android:icon="@drawable/plate"
+        android:title="@string/txt_plate_number" />
+
+    <item
+        android:id="@+id/navigation_sort_by_battery"
+        android:icon="@drawable/battery"
+        android:title="@string/txt_battery" />
+
+    <item
+        android:id="@+id/navigation_sort_by_distance"
+        android:icon="@drawable/distance"
+        android:title="@string/txt_distance" />
+
+</menu>

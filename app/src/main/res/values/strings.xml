@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Cars</string>
+    <string name="txt_maps">Map</string>
+    <string name="txt_plate_number">Plate nr.</string>
+    <string name="txt_battery">Battery</string>
+    <string name="txt_distance">Distance</string>
+
+    <string name="txt_permission_are_necessary_title">Necessary permission</string>
+    <string name="txt_permission_are_necessary_body">To grant location permission is necessary, in order to use our application!</string>
+    <string name="txt_alert_ok">OK</string>
+
+    <string name="txt_error">Something went wrong, try it again!</string>
+</resources>
