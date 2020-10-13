@@ -17,12 +17,12 @@ import com.google.android.gms.maps.model.*
 import com.noemi.android.cars.R
 import com.noemi.android.cars.databinding.FragmentMapBinding
 import com.noemi.android.core.domain.Car
-import org.koin.androidx.viewmodel.ext.android.stateViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.logger.KOIN_TAG
 
 class FragmentMap : Fragment(), OnMapReadyCallback {
 
-    private val mapViewModel: MapViewModel by stateViewModel()
+    private val mapViewModel: MapViewModel by viewModel()
     private lateinit var binding: FragmentMapBinding
     private var cars = mutableListOf<Car>()
 

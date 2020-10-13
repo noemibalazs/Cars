@@ -1,7 +1,5 @@
 package com.noemi.android.cars.presentation.map
 
-import android.util.Log
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import com.noemi.android.cars.framework.action.InterActors
 import com.noemi.android.cars.presentation.helper.SingleLiveData
@@ -14,7 +12,6 @@ import kotlinx.coroutines.withContext
 import org.koin.core.logger.KOIN_TAG
 
 class MapViewModel(
-    val handle: SavedStateHandle,
     val interActors: InterActors
 ) : ViewModel() {
 

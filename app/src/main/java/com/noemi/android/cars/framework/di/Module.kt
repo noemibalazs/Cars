@@ -1,6 +1,5 @@
 package com.noemi.android.cars.framework.di
 
-import androidx.lifecycle.SavedStateHandle
 import com.noemi.android.cars.framework.action.InterActors
 import com.noemi.android.cars.framework.localedatasource.DBCarDataSource
 import com.noemi.android.cars.framework.db.CarDataBase
@@ -65,9 +64,8 @@ val carViewModelModule = module {
         )
     }
 
-    viewModel { (handle: SavedStateHandle) ->
+    viewModel {
         CarViewModel(
-            handle = handle,
             carRemoteDataSource = get(),
             interActors = get()
         )
@@ -75,10 +73,8 @@ val carViewModelModule = module {
 }
 
 val mapViewModelModule = module {
-
-    viewModel { (handle: SavedStateHandle) ->
+    viewModel {
         MapViewModel(
-            handle = handle,
             interActors = get()
         )
     }

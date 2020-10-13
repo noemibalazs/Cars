@@ -8,12 +8,11 @@ import androidx.fragment.app.Fragment
 import com.noemi.android.cars.R
 import com.noemi.android.cars.databinding.FragmentCarsBinding
 import com.noemi.android.cars.framework.adapter.CarAdapter
-import com.noemi.android.cars.presentation.util.CARS_LIST_SAVED_STATE
-import org.koin.androidx.viewmodel.ext.android.stateViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class FragmentCars : Fragment() {
 
-    private val carViewModel: CarViewModel by stateViewModel()
+    private val carViewModel: CarViewModel by viewModel()
     private lateinit var binding: FragmentCarsBinding
     private lateinit var carAdapter: CarAdapter
 
@@ -40,21 +39,10 @@ class FragmentCars : Fragment() {
     }
 
     private fun initObservers() {
-        val savedState = carViewModel.handle.contains(CARS_LIST_SAVED_STATE)
-
-        if (!savedState) {
-            carViewModel.carList.observe(viewLifecycleOwner, {
-                carAdapter.submitList(it)
-                carViewModel.addCars2DB(it)
-                carViewModel.saveCarsDueConfigurationChanges(it)
-            })
-        } else {
-            carViewModel.getCarsLiveData().observe(viewLifecycleOwner, {
-                carAdapter.submitList(null)
-                carAdapter.submitList(it)
-            })
-        }
-
+        carViewModel.carList.observe(viewLifecycleOwner, {
+            carAdapter.submitList(it)
+            carViewModel.addCars2DB(it)
+        })
 
         carViewModel.failureError.observe(viewLifecycleOwner, {
             showErrorMessage()
