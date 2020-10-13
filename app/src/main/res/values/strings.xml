@@ -11,4 +11,5 @@
 
     <string name="txt_error">Something went wrong, try it again!</string>
     <string name="txt_hint_plate_number">Search cars by plate number</string>
+    <string name="txt_hint_battery_percentage">Search cars by battery percentage</string>
 </resources>

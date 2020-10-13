@@ -45,7 +45,7 @@ class FragmentPlateNumber : Fragment() {
     }
 
     private fun initObservers(){
-        carViewModel.mutableFilteredCars.observe(viewLifecycleOwner, {
+        carViewModel.mutablePlateNumberFilteredCars.observe(viewLifecycleOwner, {
             carAdapter.submitList(it)
             showOrHideErrorLayout(it.isNullOrEmpty())
             hideSoftKeyBoard()
