@@ -1,5 +1,6 @@
 package com.noemi.android.cars.framework.di
 
+import androidx.lifecycle.SavedStateHandle
 import com.noemi.android.cars.framework.action.InterActors
 import com.noemi.android.cars.framework.localedatasource.DBCarDataSource
 import com.noemi.android.cars.framework.db.CarDataBase
@@ -8,6 +9,7 @@ import com.noemi.android.cars.framework.remotedatasource.CarRemoteDataSource
 import com.noemi.android.cars.framework.remotedatasource.CarRemoteDataSourceImpl
 import com.noemi.android.cars.presentation.cars.CarViewModel
 import com.noemi.android.cars.presentation.helper.Mapper
+import com.noemi.android.cars.presentation.map.MapViewModel
 import com.noemi.android.core.datasource.CarDataSource
 import com.noemi.android.core.datasource.CarRepository
 import com.noemi.android.core.interactors.AddCars
@@ -62,9 +64,21 @@ val carViewModelModule = module {
             carServiceAPI = get()
         )
     }
-    viewModel {
+
+    viewModel { (handle: SavedStateHandle) ->
         CarViewModel(
+            handle = handle,
             carRemoteDataSource = get(),
+            interActors = get()
+        )
+    }
+}
+
+val mapViewModelModule = module {
+
+    viewModel { (handle: SavedStateHandle) ->
+        MapViewModel(
+            handle = handle,
             interActors = get()
         )
     }
