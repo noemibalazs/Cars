@@ -13,4 +13,10 @@ interface CarDAO {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun addCars2DB(cars: List<CarEntity>)
+
+    @Query("SELECT * FROM car_table WHERE plateNumber LIKE:pNumber")
+    suspend fun showFilteredCarsByPlateNumber(pNumber: String): MutableList<CarEntity>
+
+    @Query("SELECT * FROM car_table WHERE batteryPercentage >= :percentage ORDER BY id")
+    suspend fun showFilteredCarsByRemainingBattery(percentage: Int): MutableList<CarEntity>
 }

@@ -21,4 +21,14 @@ class DBCarDataSource(
         val entityList = carDataBase.carDAO().showCarList()
         return entityList.map { entity -> mapper.mapCarEntity2Car(entity) }
     }
+
+    override suspend fun carsFilteredByPlateNumber(plate: String): List<Car> {
+        val entityList = carDataBase.carDAO().showFilteredCarsByPlateNumber(plate)
+        return entityList.map { entity -> mapper.mapCarEntity2Car(entity) }
+    }
+
+    override suspend fun carsFilteredByBatteryPercentage(battery: Int): List<Car> {
+        val entityList = carDataBase.carDAO().showFilteredCarsByRemainingBattery(battery)
+        return entityList.map { entity -> mapper.mapCarEntity2Car(entity) }
+    }
 }

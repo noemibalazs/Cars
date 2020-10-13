@@ -18,7 +18,7 @@ class CarVH(
             Glide.with(binding.root.context).load(car.model.photoUrl).error(R.drawable.jaguar)
                 .placeholder(R.drawable.jaguar).into(binding.ivCar)
 
-            binding.tvCarModel.text = car.model.title
+            binding.tvCarModel.text = String.format("%s - %d - %s", car.model.title, car.id, car.plateNumber)
         }
     }
 }

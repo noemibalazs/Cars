@@ -12,6 +12,8 @@ import com.noemi.android.cars.presentation.map.MapViewModel
 import com.noemi.android.core.datasource.CarDataSource
 import com.noemi.android.core.datasource.CarRepository
 import com.noemi.android.core.interactors.AddCars
+import com.noemi.android.core.interactors.FilteredByBatteryPercentage
+import com.noemi.android.core.interactors.FilteredByPlateNumber
 import com.noemi.android.core.interactors.ShowsCars
 import org.koin.android.ext.koin.androidApplication
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -45,13 +47,17 @@ val carRepositoryModule = module {
 val actorsModule = module {
     single { AddCars(carRepository = get()) }
     single { ShowsCars(carRepository = get()) }
+    single { FilteredByPlateNumber(carRepository = get()) }
+    single { FilteredByBatteryPercentage(carRepository = get()) }
 }
 
 val interActorsModule = module {
     single {
         InterActors(
             addCars = get(),
-            showsCars = get()
+            showsCars = get(),
+            filteredByPlateNumber = get(),
+            filteredByBatteryPercentage = get()
         )
     }
 }

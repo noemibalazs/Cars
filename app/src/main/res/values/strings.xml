@@ -10,5 +10,5 @@
     <string name="txt_alert_ok">OK</string>
 
     <string name="txt_error">Something went wrong, try it again!</string>
-    <string name="title_activity_maps">Map</string>
+    <string name="txt_hint_plate_number">Search cars by plate number</string>
 </resources>
