@@ -45,6 +45,7 @@ class FragmentBattery : Fragment() {
 
     private fun initObservers() {
         carViewModel.mutableBatteryFilteredCars.observe(viewLifecycleOwner, {
+            carAdapter.submitList(null)
             carAdapter.submitList(it)
             showOrHideErrorLayout(it.isNullOrEmpty())
             hideSoftKeyBoard()

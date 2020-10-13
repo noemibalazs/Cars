@@ -65,8 +65,9 @@ class CarViewModel(
     private fun loadFilteredCarsByGreaterBatteryPercentage() {
         Logger.d(KOIN_TAG, "loadFilteredCarsByGreaterBatteryPercentage")
         GlobalScope.launch(Dispatchers.IO) {
+            val percentage = mutableBatteryPercentage.get()?.toIntOrNull()
             val percentageList = interActors.filteredByBatteryPercentage.invoke(
-                mutableBatteryPercentage.get()?.toInt() ?: return@launch
+                percentage ?: 0
             )
             withContext(Dispatchers.Main) {
                 try {
