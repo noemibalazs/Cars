@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackground"
             android:contentDescription="@null"
-            android:onClick="@{() -> viewModel.onFilterByBatteryPercentage()}"
+            android:onClick="@{() -> viewModel.onFilterByBatteryPercentageClicked()}"
             android:padding="6dp"
             android:src="@drawable/done"
             app:layout_constraintEnd_toEndOf="parent"

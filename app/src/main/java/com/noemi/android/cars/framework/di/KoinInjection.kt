@@ -15,6 +15,7 @@ class KoinInjection {
             fun getInterActorsModule() = listOf(interActorsModule)
             fun getCarViewModelModule() = listOf(carViewModelModule)
             fun getMapViewModelModule() = listOf(mapViewModelModule)
+            fun getDataManagerModule() = listOf(dataManagerModule)
 
             return mutableListOf<Module>().apply {
                 addAll(getMapperModule())
@@ -26,6 +27,7 @@ class KoinInjection {
                 addAll(getInterActorsModule())
                 addAll(getCarViewModelModule())
                 addAll(getMapViewModelModule())
+                addAll(getDataManagerModule())
             }
         }
     }

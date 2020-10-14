@@ -7,6 +7,7 @@ import com.noemi.android.cars.framework.network.CarServiceAPI
 import com.noemi.android.cars.framework.remotedatasource.CarRemoteDataSource
 import com.noemi.android.cars.framework.remotedatasource.CarRemoteDataSourceImpl
 import com.noemi.android.cars.presentation.cars.CarViewModel
+import com.noemi.android.cars.presentation.helper.DataManager
 import com.noemi.android.cars.presentation.helper.Mapper
 import com.noemi.android.cars.presentation.map.MapViewModel
 import com.noemi.android.core.datasource.CarDataSource
@@ -73,7 +74,8 @@ val carViewModelModule = module {
     viewModel {
         CarViewModel(
             carRemoteDataSource = get(),
-            interActors = get()
+            interActors = get(),
+            dataManager = get()
         )
     }
 }
@@ -84,4 +86,8 @@ val mapViewModelModule = module {
             interActors = get()
         )
     }
+}
+
+val dataManagerModule = module {
+    single { DataManager(context = androidApplication().applicationContext) }
 }

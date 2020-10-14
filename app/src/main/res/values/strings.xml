@@ -12,4 +12,5 @@
     <string name="txt_error">Something went wrong, try it again!</string>
     <string name="txt_hint_plate_number">Search cars by plate number</string>
     <string name="txt_hint_battery_percentage">Search cars by battery percentage</string>
+    <string name="txt_nearest_cars_text">The list of cars are displayed based on your distance, starting with the nearest to your position!</string>
 </resources>
