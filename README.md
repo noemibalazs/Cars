@@ -1,6 +1,7 @@
 Cars
 
 TODO:
+
 Design and implement an application following the next steps:
 1. Fetching cars from an API and displaying in a list;
 2. Showing the cars on the Google map;
